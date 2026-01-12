@@ -10,4 +10,5 @@ test('Open saucedemo.com', async ({ page }) => {
   // check the presence of an element inventory_list on the page after login
   await expect(page).toHaveURL(/inventory/);
   await expect(page.locator('.inventory_list')).toBeVisible();
+  await page.pause();
 });
