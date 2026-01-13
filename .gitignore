@@ -3,3 +3,5 @@ test-results/
 playwright/.cache/
 .env
 .env.local
+.DS_Store
+*.log
