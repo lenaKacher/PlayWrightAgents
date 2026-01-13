@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/LoginPage');
-const { VALID_USER, PRODUCTS, EXPECTED_CART_COUNTS } = require('./testData');
+const { VALID_USER } = require('./testData');
 
 test('Open saucedemo.com', async ({ page }) => {
   const loginPage = new LoginPage(page);
