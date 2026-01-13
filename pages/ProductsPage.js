@@ -19,10 +19,17 @@ class ProductsPage {
     const priceElements = this.page.locator('.inventory_item_price');
     const count = await priceElements.count();
 
+    if (count === 0) {
+      throw new Error('No price elements found on the page');
+  }
+
     const prices = [];
     for (let i = 0; i < count; i++) {
       const text = await priceElements.nth(i).textContent(); 
       const number = parseFloat(text.replace('$', ''));
+      if (isNaN(number)) {
+        throw new Error(`Invalid price format at index ${i}: ${text}`);
+      }
       prices.push(number);
     }
 
